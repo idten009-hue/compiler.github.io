@@ -77,54 +77,11 @@ print(dog1.name) # Buddy</code></pre>
 car = Car("Toyota", "Camry", 2022)
 print(car.info())          # 2022 Toyota Camry
 car.accelerate(50)         # Speed: 50 km/h
-car.accelerate(30)         # Speed: 80 km/h
 car.brake()                # Car stopped</code></pre>
             </section>
 
             <section>
-                <h2>3. The __init__ Method (Constructor)</h2>
-                <p>The __init__ method is called when an object is created. It initializes object attributes.</p>
-                <pre><code>class Person:
-    def __init__(self, name, age, email):
-        self.name = name
-        self.age = age
-        self.email = email
-        print(f"Person {name} created")
-
-person = Person("Alice", 30, "alice@example.com")
-# Output: Person Alice created</code></pre>
-            </section>
-
-            <section>
-                <h2>4. Encapsulation</h2>
-                <p>Encapsulation is bundling data and methods. Python uses naming conventions for privacy.</p>
-                <pre><code>class BankAccount:
-    def __init__(self, balance):
-        self.__balance = balance  # Private attribute
-    
-    def deposit(self, amount):
-        if amount > 0:
-            self.__balance += amount
-            print(f"Deposited: ${amount}")
-    
-    def withdraw(self, amount):
-        if 0 < amount <= self.__balance:
-            self.__balance -= amount
-            print(f"Withdrawn: ${amount}")
-        else:
-            print("Insufficient funds")
-    
-    def get_balance(self):
-        return self.__balance
-
-account = BankAccount(1000)
-account.deposit(500)           # Deposited: $500
-print(account.get_balance())   # 1500
-account.withdraw(200)          # Withdrawn: $200</code></pre>
-            </section>
-
-            <section>
-                <h2>5. Inheritance</h2>
+                <h2>3. Inheritance</h2>
                 <p>Inheritance allows a class to inherit attributes and methods from another class.</p>
                 <pre><code>class Animal:
     def __init__(self, name):
@@ -149,55 +106,7 @@ cat.speak()    # Whiskers meows: Meow!</code></pre>
             </section>
 
             <section>
-                <h2>6. Method Overriding</h2>
-                <p>Subclasses can override parent class methods.</p>
-                <pre><code>class Vehicle:
-    def start(self):
-        print("Vehicle started")
-
-class Car(Vehicle):
-    def start(self):
-        print("Car engine started with key")
-
-class ElectricCar(Vehicle):
-    def start(self):
-        print("Electric car powered on")
-
-vehicles = [Car(), ElectricCar()]
-for vehicle in vehicles:
-    vehicle.start()
-# Output:
-# Car engine started with key
-# Electric car powered on</code></pre>
-            </section>
-
-            <section>
-                <h2>7. super() Function</h2>
-                <p>Use super() to call methods from the parent class.</p>
-                <pre><code>class Student:
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
-    
-    def info(self):
-        return f"Name: {self.name}, Age: {self.age}"
-
-class CollegeStudent(Student):
-    def __init__(self, name, age, student_id):
-        super().__init__(name, age)
-        self.student_id = student_id
-    
-    def info(self):
-        parent_info = super().info()
-        return f"{parent_info}, ID: {self.student_id}"
-
-student = CollegeStudent("Bob", 20, "123456")
-print(student.info())
-# Output: Name: Bob, Age: 20, ID: 123456</code></pre>
-            </section>
-
-            <section>
-                <h2>8. Polymorphism</h2>
+                <h2>4. Polymorphism</h2>
                 <p>Polymorphism allows objects to take multiple forms.</p>
                 <pre><code>class Shape:
     def area(self):
@@ -220,30 +129,11 @@ class Rectangle(Shape):
 
 shapes = [Circle(5), Rectangle(4, 6)]
 for shape in shapes:
-    print(f"Area: {shape.area()}")
-# Output:
-# Area: 78.5
-# Area: 24</code></pre>
+    print(f"Area: {shape.area()}")</code></pre>
             </section>
 
             <section>
-                <h2>9. Class and Static Methods</h2>
-                <pre><code>class MathUtils:
-    @staticmethod
-    def add(a, b):
-        return a + b
-    
-    @classmethod
-    def from_string(cls, value_str):
-        return cls(int(value_str))
-
-# Use static method without creating instance
-result = MathUtils.add(5, 3)
-print(result)  # 8</code></pre>
-            </section>
-
-            <section>
-                <h2>10. Practical Example: Library System</h2>
+                <h2>5. Practical Example: Library System</h2>
                 <pre><code>class Book:
     def __init__(self, title, author, isbn):
         self.title = title
@@ -267,23 +157,12 @@ class Library:
                 book.available = False
                 return f"You borrowed: {book}"
         return "Book not available"
-    
-    def return_book(self, isbn):
-        for book in self.books:
-            if book.isbn == isbn:
-                book.available = True
-                return f"You returned: {book}"
 
 # Usage
 library = Library()
 book1 = Book("Python 101", "John Doe", "001")
-book2 = Book("Data Science", "Jane Smith", "002")
-
 library.add_book(book1)
-library.add_book(book2)
-
-print(library.borrow_book("001"))  # You borrowed: Python 101 by John Doe
-print(library.return_book("001"))  # You returned: Python 101 by John Doe</code></pre>
+print(library.borrow_book("001"))  # You borrowed: Python 101 by John Doe</code></pre>
             </section>
 
             <section>
@@ -293,20 +172,18 @@ print(library.return_book("001"))  # You returned: Python 101 by John Doe</code>
                     <li><strong>Object:</strong> Instance of a class</li>
                     <li><strong>Attribute:</strong> Variable belonging to an object</li>
                     <li><strong>Method:</strong> Function belonging to a class</li>
-                    <li><strong>Encapsulation:</strong> Bundling data and methods</li>
                     <li><strong>Inheritance:</strong> Creating classes from other classes</li>
                     <li><strong>Polymorphism:</strong> Objects taking multiple forms</li>
-                    <li><strong>Abstraction:</strong> Hiding complex implementation details</li>
                 </ul>
             </section>
 
             <section>
                 <h2>Practice Exercises</h2>
                 <ol>
-                    <li>Create a Student class with name, ID, and GPA. Add a method to display info.</li>
-                    <li>Create an Employee class and a Manager subclass with salary management.</li>
-                    <li>Build a simple game character system with different character types.</li>
-                    <li>Create a product inventory system with products and categories.</li>
+                    <li>Create a Student class with name, ID, and GPA</li>
+                    <li>Create an Employee class and a Manager subclass</li>
+                    <li>Build a simple game character system</li>
+                    <li>Create a product inventory system</li>
                 </ol>
             </section>
 

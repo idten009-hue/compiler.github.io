@@ -76,14 +76,6 @@ print(name[0])             # P
 print(len(name))           # 6
 print(name * 2)            # PythonPython
 print("Py" in name)        # True</code></pre>
-
-                <h3>String Methods</h3>
-                <p>Strings have powerful built-in methods:</p>
-                <pre><code>text = "  Python Programming  "
-print(text.strip())              # Remove whitespace
-print(text.replace("Python", "Java"))
-print(text.split())              # Split into list
-print("-".join(["A", "B", "C"])) # Join list with separator</code></pre>
             </section>
 
             <section>
@@ -110,19 +102,7 @@ rgb = (255, 128, 0)
 print(coordinates[0])     # 10
 print(len(coordinates))   # 2
 a, b = coordinates        # Unpacking
-print(a, b)               # 10 20
-
-# Tuples are immutable
-# coordinates[0] = 15  # This would cause an error</code></pre>
-
-                <h3>Ranges (range)</h3>
-                <p>Ranges generate sequences of numbers, commonly used in loops.</p>
-                <pre><code>r = range(5)           # 0, 1, 2, 3, 4
-r2 = range(2, 8)       # 2, 3, 4, 5, 6, 7
-r3 = range(0, 10, 2)   # 0, 2, 4, 6, 8
-
-for i in r:
-    print(i)</code></pre>
+print(a, b)               # 10 20</code></pre>
             </section>
 
             <section>
@@ -136,24 +116,11 @@ numbers = {1, 2, 2, 3, 3, 3}  # Duplicates removed
 print(numbers)                    # {1, 2, 3}
 colors.add("yellow")             # Add item
 colors.remove("red")             # Remove item
-print("blue" in colors)           # True
-
-# Set operations
-a = {1, 2, 3}
-b = {2, 3, 4}
-print(a | b)  # Union: {1, 2, 3, 4}
-print(a & b)  # Intersection: {2, 3}
-print(a - b)  # Difference: {1}</code></pre>
-
-                <h3>Frozen Sets (frozenset)</h3>
-                <p>Immutable sets that can be used as dictionary keys.</p>
-                <pre><code>fs = frozenset([1, 2, 3])
-print(fs)
-# fs.add(4)  # Error: frozenset has no add method</code></pre>
+print("blue" in colors)           # True</code></pre>
             </section>
 
             <section>
-                <h2>5. Mapping Type - Dictionaries</h2>
+                <h2>5. Dictionaries</h2>
                 <p>Dictionaries store key-value pairs and are highly efficient for data lookup.</p>
                 <pre><code>person = {
     "name": "Alice",
@@ -163,65 +130,7 @@ print(fs)
 
 print(person["name"])         # Alice
 print(person.get("age"))      # 30
-person["email"] = "alice@example.com"  # Add item
-del person["city"]            # Remove item
-
-# Iterate through dictionary
-for key, value in person.items():
-    print(f"{key}: {value}")
-
-# Dictionary methods
-print(person.keys())          # Get all keys
-print(person.values())        # Get all values</code></pre>
-            </section>
-
-            <section>
-                <h2>6. Boolean Type</h2>
-                <p>Booleans represent True or False values, essential for conditionals.</p>
-                <pre><code>is_student = True
-is_adult = False
-
-# Comparison operations return booleans
-print(5 > 3)        # True
-print(10 == 5)      # False
-print("hello" != "world")  # True
-
-# Boolean operations
-print(True and False)  # False
-print(True or False)   # True
-print(not True)        # False</code></pre>
-            </section>
-
-            <section>
-                <h2>7. None Type</h2>
-                <p>None represents the absence of a value. It's useful for default values and null checks.</p>
-                <pre><code>result = None
-print(result)           # None
-print(type(result))     # &lt;class 'NoneType'&gt;
-
-# Check if value is None
-if result is None:
-    print("Result is empty")</code></pre>
-            </section>
-
-            <section>
-                <h2>Type Conversion</h2>
-                <p>Convert between different data types when needed:</p>
-                <pre><code>num_str = "42"
-num = int(num_str)           # "42" → 42
-price = float("19.99")       # "19.99" → 19.99
-text = str(123)              # 123 → "123"
-is_valid = bool(1)           # 1 → True
-num_list = list("abc")       # "abc" → ['a', 'b', 'c']</code></pre>
-            </section>
-
-            <section>
-                <h2>Type Checking with isinstance()</h2>
-                <p>Check if a variable is of a specific type:</p>
-                <pre><code>value = "hello"
-print(isinstance(value, str))       # True
-print(isinstance(value, int))       # False
-print(isinstance(value, (str, int)))  # True (either str or int)</code></pre>
+person["email"] = "alice@example.com"  # Add item</code></pre>
             </section>
 
             <section>
@@ -231,40 +140,7 @@ print(isinstance(value, (str, int)))  # True (either str or int)</code></pre>
                     <li>Use a dictionary to store information about your favorite movie</li>
                     <li>Convert a temperature from Celsius to Fahrenheit (use floats)</li>
                     <li>Find duplicate numbers in a list by converting it to a set</li>
-                    <li>Count the frequency of each character in a string</li>
                 </ol>
-            </section>
-
-            <section>
-                <h2>Summary</h2>
-                <p>Python's data types are fundamental to programming. Here's a quick reference:</p>
-                <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
-                    <tr style="background: #f0f0f0;">
-                        <th style="border: 1px solid #ccc; padding: 10px; text-align: left;">Type</th>
-                        <th style="border: 1px solid #ccc; padding: 10px; text-align: left;">Mutable</th>
-                        <th style="border: 1px solid #ccc; padding: 10px; text-align: left;">Example</th>
-                    </tr>
-                    <tr>
-                        <td style="border: 1px solid #ccc; padding: 10px;">int, float</td>
-                        <td style="border: 1px solid #ccc; padding: 10px;">No</td>
-                        <td style="border: 1px solid #ccc; padding: 10px;">42, 3.14</td>
-                    </tr>
-                    <tr>
-                        <td style="border: 1px solid #ccc; padding: 10px;">str</td>
-                        <td style="border: 1px solid #ccc; padding: 10px;">No</td>
-                        <td style="border: 1px solid #ccc; padding: 10px;">"hello"</td>
-                    </tr>
-                    <tr>
-                        <td style="border: 1px solid #ccc; padding: 10px;">list</td>
-                        <td style="border: 1px solid #ccc; padding: 10px;">Yes</td>
-                        <td style="border: 1px solid #ccc; padding: 10px;">[1, 2, 3]</td>
-                    </tr>
-                    <tr>
-                        <td style="border: 1px solid #ccc; padding: 10px;">dict</td>
-                        <td style="border: 1px solid #ccc; padding: 10px;">Yes</td>
-                        <td style="border: 1px solid #ccc; padding: 10px;">{"key": "value"}</td>
-                    </tr>
-                </table>
             </section>
 
             <div style="margin-top: 40px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
