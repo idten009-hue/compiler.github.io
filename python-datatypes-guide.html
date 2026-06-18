@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete guide to Python data types: integers, floats, strings, lists, dictionaries, sets, and tuples with examples">
+    <meta name="google-adsense-account" content="ca-pub-8709136418584975">
+    <meta name="keywords" content="python data types, python int, python string, python list, python dictionary, python tuple">
+    <title>Python Data Types Guide | YBY Compiler</title>
+    <link rel="canonical" href="https://ybycompiler.netlify.app/python-datatypes-guide.html">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8709136418584975" crossorigin="anonymous"></script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Python Data Types Guide - Complete Tutorial",
+      "description": "Learn all Python data types with practical examples",
+      "author": {"@type": "Organization", "name": "YBY Compiler"},
+      "datePublished": "2026-06-18"
+    }
+    </script>
+</head>
+<body>
+    <div class="blog-container">
+        <a href="index.html" class="back-link">← Back to Compiler</a>
+        <article class="tutorial-article">
+            <h1>Python Data Types: Complete Guide</h1>
+            <p class="article-meta">Last updated: June 18, 2026 | Reading time: 8 minutes</p>
+
+            <section>
+                <h2>Introduction to Python Data Types</h2>
+                <p>Python provides several built-in data types for storing and manipulating data. Understanding these types is fundamental to writing effective Python code. Each type has specific characteristics and methods.</p>
+            </section>
+
+            <section>
+                <h2>1. Numeric Types</h2>
+                
+                <h3>Integers (int)</h3>
+                <p>Integers are whole numbers without decimal points. Python supports arbitrarily large integers.</p>
+                <pre><code>age = 25
+temperature = -10
+big_number = 123456789012345678901234567890
+print(type(age))  # &lt;class 'int'&gt;
+print(age + 5)    # 30</code></pre>
+
+                <h3>Floats (float)</h3>
+                <p>Floats represent decimal numbers. Use them for precise calculations involving decimals.</p>
+                <pre><code>price = 19.99
+percentage = 0.75
+scientific = 1.5e-3  # Scientific notation
+print(type(price))    # &lt;class 'float'&gt;
+print(price * 2)      # 39.98</code></pre>
+
+                <h3>Complex Numbers</h3>
+                <p>Python natively supports complex numbers for mathematical operations.</p>
+                <pre><code>z = 3 + 4j
+print(z.real)      # 3.0
+print(z.imag)      # 4.0
+print(z.conjugate())  # (3-4j)</code></pre>
+            </section>
+
+            <section>
+                <h2>2. String Type (str)</h2>
+                <p>Strings are sequences of characters used for text data. They're immutable and support many operations.</p>
+                <pre><code>name = "Python"
+greeting = 'Hello, World!'
+multiline = """This is
+a multiline
+string"""
+
+# String operations
+print(name.lower())        # python
+print(name.upper())        # PYTHON
+print(name[0])             # P
+print(len(name))           # 6
+print(name * 2)            # PythonPython
+print("Py" in name)        # True</code></pre>
+
+                <h3>String Methods</h3>
+                <p>Strings have powerful built-in methods:</p>
+                <pre><code>text = "  Python Programming  "
+print(text.strip())              # Remove whitespace
+print(text.replace("Python", "Java"))
+print(text.split())              # Split into list
+print("-".join(["A", "B", "C"])) # Join list with separator</code></pre>
+            </section>
+
+            <section>
+                <h2>3. Sequence Types</h2>
+
+                <h3>Lists (list)</h3>
+                <p>Lists are ordered, mutable collections that can store multiple data types.</p>
+                <pre><code>fruits = ["apple", "banana", "cherry"]
+mixed = [1, "hello", 3.14, True]
+
+# List operations
+fruits.append("date")           # Add item
+fruits.remove("banana")         # Remove item
+print(fruits[0])                # Access first item
+print(fruits[-1])               # Access last item
+print(len(fruits))              # Get length
+print(fruits[:2])               # Slice first 2 items</code></pre>
+
+                <h3>Tuples (tuple)</h3>
+                <p>Tuples are ordered, immutable collections. Use them when data shouldn't change.</p>
+                <pre><code>coordinates = (10, 20)
+rgb = (255, 128, 0)
+
+print(coordinates[0])     # 10
+print(len(coordinates))   # 2
+a, b = coordinates        # Unpacking
+print(a, b)               # 10 20
+
+# Tuples are immutable
+# coordinates[0] = 15  # This would cause an error</code></pre>
+
+                <h3>Ranges (range)</h3>
+                <p>Ranges generate sequences of numbers, commonly used in loops.</p>
+                <pre><code>r = range(5)           # 0, 1, 2, 3, 4
+r2 = range(2, 8)       # 2, 3, 4, 5, 6, 7
+r3 = range(0, 10, 2)   # 0, 2, 4, 6, 8
+
+for i in r:
+    print(i)</code></pre>
+            </section>
+
+            <section>
+                <h2>4. Set Types</h2>
+
+                <h3>Sets (set)</h3>
+                <p>Sets are unordered collections of unique items. Great for removing duplicates.</p>
+                <pre><code>colors = {"red", "green", "blue"}
+numbers = {1, 2, 2, 3, 3, 3}  # Duplicates removed
+
+print(numbers)                    # {1, 2, 3}
+colors.add("yellow")             # Add item
+colors.remove("red")             # Remove item
+print("blue" in colors)           # True
+
+# Set operations
+a = {1, 2, 3}
+b = {2, 3, 4}
+print(a | b)  # Union: {1, 2, 3, 4}
+print(a & b)  # Intersection: {2, 3}
+print(a - b)  # Difference: {1}</code></pre>
+
+                <h3>Frozen Sets (frozenset)</h3>
+                <p>Immutable sets that can be used as dictionary keys.</p>
+                <pre><code>fs = frozenset([1, 2, 3])
+print(fs)
+# fs.add(4)  # Error: frozenset has no add method</code></pre>
+            </section>
+
+            <section>
+                <h2>5. Mapping Type - Dictionaries</h2>
+                <p>Dictionaries store key-value pairs and are highly efficient for data lookup.</p>
+                <pre><code>person = {
+    "name": "Alice",
+    "age": 30,
+    "city": "New York"
+}
+
+print(person["name"])         # Alice
+print(person.get("age"))      # 30
+person["email"] = "alice@example.com"  # Add item
+del person["city"]            # Remove item
+
+# Iterate through dictionary
+for key, value in person.items():
+    print(f"{key}: {value}")
+
+# Dictionary methods
+print(person.keys())          # Get all keys
+print(person.values())        # Get all values</code></pre>
+            </section>
+
+            <section>
+                <h2>6. Boolean Type</h2>
+                <p>Booleans represent True or False values, essential for conditionals.</p>
+                <pre><code>is_student = True
+is_adult = False
+
+# Comparison operations return booleans
+print(5 > 3)        # True
+print(10 == 5)      # False
+print("hello" != "world")  # True
+
+# Boolean operations
+print(True and False)  # False
+print(True or False)   # True
+print(not True)        # False</code></pre>
+            </section>
+
+            <section>
+                <h2>7. None Type</h2>
+                <p>None represents the absence of a value. It's useful for default values and null checks.</p>
+                <pre><code>result = None
+print(result)           # None
+print(type(result))     # &lt;class 'NoneType'&gt;
+
+# Check if value is None
+if result is None:
+    print("Result is empty")</code></pre>
+            </section>
+
+            <section>
+                <h2>Type Conversion</h2>
+                <p>Convert between different data types when needed:</p>
+                <pre><code>num_str = "42"
+num = int(num_str)           # "42" → 42
+price = float("19.99")       # "19.99" → 19.99
+text = str(123)              # 123 → "123"
+is_valid = bool(1)           # 1 → True
+num_list = list("abc")       # "abc" → ['a', 'b', 'c']</code></pre>
+            </section>
+
+            <section>
+                <h2>Type Checking with isinstance()</h2>
+                <p>Check if a variable is of a specific type:</p>
+                <pre><code>value = "hello"
+print(isinstance(value, str))       # True
+print(isinstance(value, int))       # False
+print(isinstance(value, (str, int)))  # True (either str or int)</code></pre>
+            </section>
+
+            <section>
+                <h2>Practice Exercises</h2>
+                <ol>
+                    <li>Create a list of your favorite books and print the first and last one</li>
+                    <li>Use a dictionary to store information about your favorite movie</li>
+                    <li>Convert a temperature from Celsius to Fahrenheit (use floats)</li>
+                    <li>Find duplicate numbers in a list by converting it to a set</li>
+                    <li>Count the frequency of each character in a string</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Summary</h2>
+                <p>Python's data types are fundamental to programming. Here's a quick reference:</p>
+                <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                    <tr style="background: #f0f0f0;">
+                        <th style="border: 1px solid #ccc; padding: 10px; text-align: left;">Type</th>
+                        <th style="border: 1px solid #ccc; padding: 10px; text-align: left;">Mutable</th>
+                        <th style="border: 1px solid #ccc; padding: 10px; text-align: left;">Example</th>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ccc; padding: 10px;">int, float</td>
+                        <td style="border: 1px solid #ccc; padding: 10px;">No</td>
+                        <td style="border: 1px solid #ccc; padding: 10px;">42, 3.14</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ccc; padding: 10px;">str</td>
+                        <td style="border: 1px solid #ccc; padding: 10px;">No</td>
+                        <td style="border: 1px solid #ccc; padding: 10px;">"hello"</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ccc; padding: 10px;">list</td>
+                        <td style="border: 1px solid #ccc; padding: 10px;">Yes</td>
+                        <td style="border: 1px solid #ccc; padding: 10px;">[1, 2, 3]</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ccc; padding: 10px;">dict</td>
+                        <td style="border: 1px solid #ccc; padding: 10px;">Yes</td>
+                        <td style="border: 1px solid #ccc; padding: 10px;">{"key": "value"}</td>
+                    </tr>
+                </table>
+            </section>
+
+            <div style="margin-top: 40px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
+                <h3>Try it in the Compiler</h3>
+                <p>All the code examples above can be run directly in <a href="index.html">YBY Compiler</a>. Just copy, paste, and click "Run Code" to test these data types interactively.</p>
+            </div>
+        </article>
+
+        <a href="index.html" class="back-link">← Back to Compiler</a>
+    </div>
+</body>
+</html>
